@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="css-reset.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --clr-primary-400: hsl(180, 62%, 55%);
+        --clr-primary-300: hsl(0, 78%, 62%);
+        --clr-primary-200: hsl(34, 97%, 64%);
+        --clr-primary-250: hsl(212, 86%, 64%);
+
+        --clr-accent-400: hsl(234, 12%, 34%);
+        --clr-accent-200: hsl(229, 6%, 66%);
+        --clr-accent-100: hsl(0, 0%, 98%);
+
+        --fw-200: 200;
+        --fw-400: 400;
+        --fw-600: 600;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: var(--clr-accent-400);
+        text-align: center;
+        min-height: 100vh;
+      }
+      h1 {
+        font-weight: var(--fw-200);
+        font-size: 36px;
+        margin-top: 80px;
+      }
+      h2 {
+        font-size: 36px;
+        font-weight: var(--fw-600);
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: var(--fw-600);
+        margin-top: 25px;
+        margin-bottom: 0px;
+      }
+
+      .description {
+        margin-top: 15px;
+        margin-bottom: 65px;
+      }
+
+      main {
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cards {
+        --gap: 30px;
+        display: grid;
+        place-content: center;
+        /* grid-template-columns: repeat(3, 350px); */
+        /* grid-template-rows: repeat(4, calc((250px - var(--gap)) / 2)); */
+        gap: var(--gap);
+        grid-template-areas:
+          ". a ."
+          "b a c"
+          "b d c"
+          ". d .";
+      }
+
+      .card {
+        width: 350px;
+        height: 250px;
+        box-shadow: 0 5px 20px var(--clr-accent-200);
+        border-radius: 0.25rem;
+        padding-inline: 30px 70px;
+        text-align: left;
+        display: grid;
+        grid-template-rows: 50px 1fr 1fr;
+      }
+      .card p {
+        font-size: 12px;
+        line-height: 1.9;
+        margin-top: 1.2rem;
+      }
+      .card img {
+        justify-self: end;
+        margin-right: -2.4rem;
+      }
+      .card__team {
+        grid-area: a;
+      }
+      .card__supervisor {
+        grid-area: b;
+      }
+      .card__karma {
+        grid-area: d;
+      }
+      .card__calculator {
+        grid-area: c;
+      }
+
+      p {
+        margin-top: 10px;
+        color: var(--clr-accent-200);
+      }
+      .top-red {
+        border-top: 4px solid var(--clr-primary-300);
+        justify-self: center;
+      }
+      .top-cyan {
+        border-top: 4px solid var(--clr-primary-400);
+        justify-self: center;
+      }
+      .top-orange {
+        border-top: 4px solid var(--clr-primary-200);
+        justify-self: center;
+      }
+      .top-blue {
+        border-top: 4px solid var(--clr-primary-250);
+        justify-self: center;
+      }
+
+      @media (max-width: 1400px) {
+        main {
+          width: 375px;
+          padding: 40px;
+        }
+        .description {
+          margin-auto: 0;
+          line-height: 1.5;
+          margin-bottom: 80px;
+        }
+        .cards {
+          grid-template-areas: "b" "a" "d" "c";
+          grid-template-rows: auto;
+          gap: 25px;
+        }
+        h1 {
+          font-size: 24px;
+          margin-top: 48px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+        .card {
+          width: 310px;
+          height: 220px;
+        }
+      }
+    </style>
+
+    <title>Frontend Mentor | Four card feature section</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Reliable, efficient delivery</h1>
+        <h2>Powered by Technology</h2>
+
+        <p class="description">
+          Our Artificial Intelligence powered tools use millions of project data
+          points to ensure that your project is successful
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card top-cyan card__supervisor">
+          <h3>Supervisor</h3>
+          <p>Monitors activity to identify project roadblocks</p>
+          <img src="images/icon-supervisor.svg" class="" alt="" />
+        </div>
+
+        <div class="card top-red card__team">
+          <h3>Team Builder</h3>
+          <p>
+            Scans our talent network to create the optimal team for your project
+          </p>
+          <img src="images/icon-team-builder.svg" class="" alt="" />
+        </div>
+
+        <div class="card top-orange card__karma">
+          <h3>Karma</h3>
+          <p>Regularly evaluates our talent to ensure quality</p>
+          <img src="images/icon-karma.svg" class="" alt="" />
+        </div>
+
+        <div class="card top-blue card__calculator">
+          <h3>Calculator</h3>
+          <p>
+            Uses data from past projects to provide better delivery estimates
+          </p>
+          <img src="images/icon-calculator.svg" class="" alt="" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
